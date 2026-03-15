@@ -1,0 +1,9 @@
+flowchart TB
+    user["Usuario"]
+    system["Voice Agent - Etapa 1"]
+    linuxaudio["Linux Audio Stack / ALSA"]
+    hw["ReSpeaker / dispositivo de audio"]
+
+    user -->|"habla / escucha"| system
+    system -->|"usa arecord y aplay"| linuxaudio
+    linuxaudio -->|"controla"| hw

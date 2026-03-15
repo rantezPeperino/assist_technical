@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "voice-agent"
+version = "0.2.0"
+description = "PoC/MVP de agente de voz - Etapa 2 STT"
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [
+  { name = "Ruben O." }
+]
+dependencies = [
+  "openai>=1.0.0"
+]
+
+[project.scripts]
+voice-agent = "voice_agent.main:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
