@@ -95,3 +95,15 @@ python3.12 -m venv .venv
 source .venv/bin/activate
 pip install -e .
 cp .env.example .env
+
+Test cada etapa
+voice-agent run-stage1
+voice-agent run-stage2
+Test convertir en archivo de audio
+voice-agent synthesize --text "Hola, esta es una prueba"
+
+Test convertir audio en texto
+voice-agent transcribe --file data/recordings/testFrancia.mp4
+
+Completo - en esta version guarda 5 segundos para comenzar el flujo.
+voice-agent run-stage4
