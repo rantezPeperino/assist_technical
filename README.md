@@ -3,56 +3,56 @@
 |                      Voice Agent MVP                         |
 +--------------------------------------------------------------+
 
-   [ Usuario ]
-       |
-       | habla
-       v
-+-------------------+
-| ReSpeaker Mic In  |
-+-------------------+
-       |
-       v
-+------------------------------+
-| Audio Input Adapter          |
-| - selecciona device input    |
-| - graba audio                |
-| - guarda archivo             |
-+------------------------------+
-       |
-       v
-+------------------------------+
-| Use Case: Record Audio       |
-+------------------------------+
-       |
-       +------------------------------+
-       |                              |
-       | Etapa 1                      | Etapa 2
-       v                              v
-+----------------------+    +------------------------------+
-| Audio Output Adapter |    | STT Adapter (OpenAI)         |
-| - reproduce archivo  |    | - envía audio                |
-| - usa ReSpeaker out  |    | - recibe texto               |
-+----------------------+    +------------------------------+
-       |                              |
-       v                              v
- [ Usuario escucha ]          [ Terminal muestra texto ]
-                                      |
-                                      | Etapa 3
-                                      v
-                           +------------------------------+
-                           | TTS Adapter (OpenAI)         |
-                           | - envía texto                |
-                           | - recibe/genera audio        |
-                           +------------------------------+
-                                      |
-                                      v
-                           +------------------------------+
-                           | Audio Output Adapter         |
-                           | - reproduce audio generado   |
-                           +------------------------------+
-                                      |
-                                      v
-                              [ Usuario escucha ]
+                        [ Usuario ]
+                            |
+                            | habla
+                            v
+                      -------------------+
+                       ReSpeaker Mic In  |
+                      -------------------+
+                            |
+                            v
+                      ------------------------------+
+                       Audio Input Adapter          |
+                       - selecciona device input    |
+                       - graba audio                |
+                       - guarda archivo             |
+                      ------------------------------+
+                            |
+                            v
+                      ------------------------------+
+                       Use Case: Record Audio       |
+                      ------------------------------+
+                            |
+                            +------------------------------+
+                            |                              |
+                            | Etapa 1                      | Etapa 2
+                            v                              v
+                      ----------------------+    +------------------------------+
+                     | Audio Output Adapter |    | STT Adapter (OpenAI)         |
+                     | - reproduce archivo  |    | - envía audio                |
+                     | - usa ReSpeaker out  |    | - recibe texto               |
+                      ----------------------+    +------------------------------+
+                            |                              |
+                            v                              v
+                      [ Usuario escucha ]          [ Terminal muestra texto ]
+                                                           |
+                                                           | Etapa 3
+                                                           v
+                                                +------------------------------+
+                                                | TTS Adapter (OpenAI)         |
+                                                | - envía texto                |
+                                                | - recibe/genera audio        |
+                                                +------------------------------+
+                                                           |
+                                                           v
+                                                +------------------------------+
+                                                | Audio Output Adapter         |
+                                                | - reproduce audio generado   |
+                                                +------------------------------+
+                                                           |
+                                                           v
+                                                   [ Usuario escucha ]
 
 
 ```
